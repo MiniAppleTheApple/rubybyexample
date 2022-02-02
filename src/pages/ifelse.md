@@ -1,33 +1,45 @@
-```lua
-local age = 10
+```ruby
+age = 10
 if age < 18 then
-    print("under 18")
+    puts "under 18"
 end
+
+# "then" is optional
 
 age = 20
-if age > 18 then
-    print("over 18")
-elseif age == 18 then
-    print("is 18")
+if age > 18
+    puts "over 18"
+elsif age == 18
+    puts "is 18"
 else
-    print("under 18")
+    puts "under 18"
 end
+
+unless age < 18
+	puts "not under 18"
+else
+	puts "under 18"
+end
+
+puts "over 18" if age > 18
+puts "is 18" if age == 18
+puts "under 18" if age < 18
 ```
 
-Comparison operators in Lua:
+Comparison operators in Ruby:
 ```
-==, <, >, <=, >=, ~= (inequality)
+==, <, >, <=, >=, !=
 ```
 
 Combining Statements
 
-```lua
-local isAlive = false
-local age = 19
-if isAlive and age > 18 then
-    print("good")
-elseif not isAlive or age < 18 then
-    print("either dead or under 18")
+```ruby
+is_alive = false
+age = 19
+if is_alive and age > 18
+    puts "good"
+elsif not is_alive or age < 18 then
+    puts "either dead or under 18"
 end
 ```
 

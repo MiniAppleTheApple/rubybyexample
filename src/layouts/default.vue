@@ -20,7 +20,7 @@ window.scrollTo(0,0);
       <div class="mb-8 mt-0 col-span-3">
         <h3 class="text-xl pl-3">
           <span class="">
-            <router-link class="link" to="/" :title="t('button.home')"><a>Lua by Example</a></router-link>
+            <router-link class="link" to="/" :title="t('button.home')"><a>Ruby by Example</a></router-link>
           </span> / {{ title }}
         </h3>
       </div>

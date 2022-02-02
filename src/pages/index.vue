@@ -14,7 +14,10 @@ const { t } = useI18n()
       <li>
         <router-link class="link mx-2" to="/hello-world" :title="t('button.about')">Hello World</router-link>
       </li>
-      <li>
+	  <li>
+        <router-link class="link mx-2" to="/types">Types</router-link>
+      </li>
+	  <li>
         <router-link class="link mx-2" to="/variables">Variables</router-link>
       </li>
       <li>
@@ -27,34 +30,28 @@ const { t } = useI18n()
         <router-link class="link mx-2" to="/ifelse">If/Else</router-link>
       </li>
       <li>
+        <router-link class="link mx-2" to="/whencase">When/Case</router-link>
+      </li>
+      <li>
         <router-link class="link mx-2" to="/whilefor">While/For</router-link>
       </li>
       <li>
         <router-link class="link mx-2" to="/functions">Functions</router-link>
       </li>
       <li>
-        <router-link class="link mx-2" to="/tables">Tables</router-link>
+        <router-link class="link mx-2" to="/array">Array</router-link>
       </li>
       <li>
-        <router-link class="link mx-2" to="/keytables">Key Tables</router-link>
+        <router-link class="link mx-2" to="/hash">Hash</router-link>
       </li>
       <li>
-        <router-link class="link mx-2" to="/metatables">Meta Tables</router-link>
-      </li>
-      <li>
-        <router-link class="link mx-2" to="/tablesort">Sorting Tables</router-link>
-      </li>
-      <li>
-        <router-link class="link mx-2" to="/varfuncs">Variadic Functions</router-link>
+        <router-link class="link mx-2" to="/vararg">Variable Arguments</router-link>
       </li>
       <li>
         <router-link class="link mx-2" to="/scope">Variable Scope</router-link>
       </li>
       <li>
         <router-link class="link mx-2" to="/stringfunc">String Functions</router-link>
-      </li>
-      <li>
-        <router-link class="link mx-2" to="/gmatch">Pattern Matching</router-link>
       </li>
       <li>
         <router-link class="link mx-2" to="/math">Math</router-link>

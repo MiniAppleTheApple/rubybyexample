@@ -1,21 +1,21 @@
-```lua
-function calculateTax(price)
+```ruby
+def calculate_tax price
     return price * 0.21
 end
 
-local result = calculateTax(100)
-print(result)
+result = calculate_tax(100)
+puts price
 ```
 ```
-21.0
+21
 ```
 
-```lua
-function info(name, age, country)
-  print(name .. " is " .. age .. " years old.")
+```ruby
+def info name, age, country
+	puts "#{name} is #{age} years old"
 end
 
-info("Kenneth", 12, "Jupiter")
+info "Kenneth", 12, "Jupiter" 
 ```
 ```
 Kenneth is 12 years old.

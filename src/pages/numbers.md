@@ -1,28 +1,26 @@
-The number type represents **real** (double-precision floating-point) numbers. Lua has no integer type, as it does not need it.
+```ruby
+a = 3
+b = 2
+c = a + b
+puts c
+# 3
 
-```lua
-local a = 3
-local b = 2
-local c = a + b
-print(c)
--- 3
+local d = a - b
+puts d
+# -1
 
-local d = b - a
-print(d)
--- 1
+x = 3.14 * 2 
+puts x
+# 6.28
 
-local x =  1 * 2 * 5
-print(x)
--- 10
+y = (2 + 2) * 2 
 
-local y = (2 + 2) * 2
-print(y)
--- 8
+puts y.to_f
+# 8.0
 
-
-print(10 / 2) -- 5
-print(2 ^ 3)  -- 4
-print(5 % 2)  -- 1
+puts 10 / 2 # 5
+puts 2 ^ 3  # 4
+puts 5 % 2  # 1
 ```
 
 <route lang="yaml">

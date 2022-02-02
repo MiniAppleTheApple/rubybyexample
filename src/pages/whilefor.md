@@ -1,44 +1,78 @@
 ### While
 
-```lua
+```ruby
 i = 1
-while (i <= 10) do
-  io.write(i)
-  i = i + 1
+while i <= 10 do # "do" is optional
+	if i < 3
+		break
+	end
+	puts i
+	i = i + 1
 
-  -- break throws you out of a loop
-  -- continue doesn't exist in Lua
-  if i == 8 then break end
+	# break throws you out of a loop
+	if i == 8 
+		break
+	end
 end
 ```
 ```
-1234567
+3
+4
+5
+6
+7
 ```
 
-### Repeat untill
+### Until 
 
-```lua
-repeat
-  io.write("Enter your guess : ")
+```ruby
+guess = 0
+# Convert String to Integer
+until guess.to_i == 15
+	print "Enter your guess: "
 
-  -- Gets input from the user
-  guess = io.read()
+	# Gets input from the user and removes carriage return characters
+	guess = gets.chomp
+end
+```
 
-  -- Either surround the number with quotes, or convert the string into
-  -- a number
-until tonumber(guess) == 15
+### Begin
+```ruby
+i = 0
+begin
+	puts i
+	i += 1
+end while i < 10
+
+# Or
+
+i= 0
+begin
+	puts i
+	i += 1
+end until i > 10
 ```
 
 ### For
 
-```lua
--- start, stop, increment each loop
-for i = 1, 10, 1 do
-  io.write(i)
+```ruby
+# start..end
+for i in 0..10 do
+	puts i 
 end
 ```
 ```
-12345678910
+1
+2
+3
+4
+5
+6
+7
+8
+9
+1
+0
 ```
 
 <route lang="yaml">

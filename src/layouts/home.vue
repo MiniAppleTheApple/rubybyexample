@@ -15,7 +15,7 @@ const toggleLocales = () => {
       <div class="flex grid grid-cols-4 grid-rows-1 gap-1">
       <div class="mb-8 mt-0 col-span-3">
         <h2 class="text-xl pl-3">
-          Lua by Example
+          Ruby by Example
         </h2>
       </div>
       <nav class="text-xl mt-1 text-true-gray-400 col-span-1 text-right">
@@ -35,7 +35,7 @@ const toggleLocales = () => {
         <a
           class="icon-btn mx-2"
           rel="noreferrer"
-          href="https://github.com/barklan/luabyexample"
+          href="https://github.com/MiniAppleTheApple/rubybyexample"
           target="_blank"
           title="GitHub"
         >

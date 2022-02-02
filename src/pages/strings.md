@@ -1,14 +1,14 @@
-```lua
-local greeting = "Hello, "
-local name = "Kenneth Sparks"
-print(greeting .. name)
+```ruby
+greeting = "Hello, "
+name = "Kenneth Sparks"
+puts greeting + name
 
-local age = 19
-local name = "Laurence"
-print(name .. " is " .. age .. " years old")
+age = 19
+name = "Laurence"
+puts name + " is " + age + " years old"
 
 hi = "Hi!"
-io.write(string.len(hi), "\n")
+puts hi.length # Alias hi.size
 ```
 ```
 Hello, Kenneth Sparks
@@ -18,12 +18,13 @@ Laurence is 19 years old
 
 We can create long strings and maintain white space
 
-```lua
-local longString = [[
+```ruby
+long_string = "
 I am a very very long
 string that goes on for
-ever]]
-io.write(longString, "\n")
+ever"
+
+puts long_string
 ```
 ```
 I am a very very long
@@ -33,8 +34,12 @@ ever
 
 String formatting
 
-```lua
-print(string.format("not true = %s", tostring(not true)))
+```ruby
+puts "not true = #{not true}"
+
+# Or
+
+puts "not true = $s" % (not true)
 ```
 ```
 not true = false

@@ -12,3 +12,4 @@ pnpm dev
 ```
 
 All pages are in `src/pages`.
+> The project is still in development

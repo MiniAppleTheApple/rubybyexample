@@ -1,18 +1,32 @@
-```lua
-local x = 10             --number
-local x = 10.1           --number
-local name = "john doe"  --string
-local isAlive = true     --boolean
-local a = nil            --no value or invalid value
+You can assign any value to any variable
+
+```ruby
+x = "I love ruby" # String
+x = 10            # Integer
+x = 6.7           # Float
+x = true          # TrueClass
+x = false         # FalseClass
+
+require "set"
+
+x = [1, "Hello", 3.14, false, true] # Array
+x = Set.new [1, 2, 3]               # Set
+x = {:foo => 1}                     # Hash
 ```
 
-It is not an error to access a non-initialized variable; you just get the special value nil as the result:
+There is no variable keyword, but...
 
-```lua
-print(b)
---nil
+```ruby
+local = 10         # local variable
+CONSTANT = "Hello" # constant warn when change it
+$global = true     # global variable
 ```
 
+You can't use undefined variable
+
+```ruby
+puts x
+```
 <route lang="yaml">
 meta:
   title: Variables
