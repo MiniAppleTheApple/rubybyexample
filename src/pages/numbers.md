@@ -5,7 +5,7 @@ c = a + b
 puts c
 # 3
 
-local d = a - b
+d = a - b
 puts d
 # -1
 

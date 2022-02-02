@@ -1,6 +1,6 @@
-# Lua by Example
+# Ruby by Example
 
-Small site to keep Lua in one place.
+Small site to keep Ruby in one place.
 
 ### Run locally
 
