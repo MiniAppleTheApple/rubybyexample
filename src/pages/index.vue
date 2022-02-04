@@ -32,10 +32,14 @@ const { t } = useI18n()
       <li>
         <router-link class="link mx-2" to="/whencase">When/Case</router-link>
       </li>
+	  
       <li>
         <router-link class="link mx-2" to="/whilefor">While/For</router-link>
       </li>
       <li>
+        <router-link class="link mx-2" to="/block">Block</router-link>
+	  </li>
+	  <li>
         <router-link class="link mx-2" to="/functions">Functions</router-link>
       </li>
       <li>
@@ -66,16 +70,13 @@ const { t } = useI18n()
         <router-link class="link mx-2" to="/files">File IO</router-link>
       </li>
       <li>
-        <router-link class="link mx-2" to="/walk">Walk a Directory</router-link>
-      </li>
-      <li>
-        <router-link class="link mx-2" to="/modules">Modules</router-link>
-      </li>
-      <li>
-        <router-link class="link mx-2" to="/coroutines">Coroutines</router-link>
+        <router-link class="link mx-2" to="/require">Require</router-link>
       </li>
       <li>
         <router-link class="link mx-2" to="/oop">Object Oriented Programming</router-link>
+      </li>
+	  <li>
+        <router-link class="link mx-2" to="/module">Module</router-link>
       </li>
       <li>
         <router-link
@@ -84,27 +85,7 @@ const { t } = useI18n()
           :title="t('button.about')"
         >Environment Variables</router-link>
       </li>
-      <li>
-        <router-link class="link mx-2" to="/execute" :title="t('button.about')">Executing Processes</router-link>
-      </li>
-      <li>
-        <router-link
-          class="link mx-2"
-          to="/luarocks"
-          :title="t('button.about')"
-        >LuaRocks (package manager)</router-link>
-      </li>
-      <li>
-        <router-link class="link mx-2" to="/docker" :title="t('button.about')">Docker</router-link>
-      </li>
-      <li>
-        <router-link
-          class="link mx-2"
-          to="/embedding"
-          :title="t('button.about')"
-        >Embedding in other languages</router-link>
-      </li>
-    </ul>
+	</ul>
   </div>
 </template>
 

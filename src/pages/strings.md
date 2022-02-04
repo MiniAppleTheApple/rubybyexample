@@ -5,7 +5,7 @@ puts greeting + name
 
 age = 19
 name = "Laurence"
-puts name + " is " + age + " years old"
+puts name + " is " + age.to_s + " years old"
 
 hi = "Hi!"
 puts hi.length # Alias hi.size

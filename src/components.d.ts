@@ -7,6 +7,7 @@ declare module 'vue' {
     CarbonLogoGithub: typeof import('~icons/carbon/logo-github')['default']
     CarbonMoon: typeof import('~icons/carbon/moon')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
   }
 }
 

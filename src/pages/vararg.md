@@ -1,7 +1,7 @@
 Variable Arguments recieve unknown number of parameters as Array
 
 ```ruby
-def getSum(*args)
+def get_sum(*args)
     sum = 0
 	
 	args.each do |arg|
@@ -11,7 +11,7 @@ def getSum(*args)
     return sum
 end
 
-puts "Sum : #{getSum(1,2,3,4,5,6)}")
+puts "Sum : #{get_sum(1, 2, 3, 4, 5, 6)}")
 ```
 ```
 Sum : 21

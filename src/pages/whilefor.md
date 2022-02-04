@@ -46,7 +46,7 @@ end while i < 10
 
 # Or
 
-i= 0
+i = 0
 begin
 	puts i
 	i += 1
@@ -62,6 +62,7 @@ for i in 0..10 do
 end
 ```
 ```
+0
 1
 2
 3
@@ -71,8 +72,55 @@ end
 7
 8
 9
-1
 0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+
+### Loop methods
+
+```ruby
+10.times {|i| puts i}
+```
+
+```
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+
+
+```ruby
+["Hello", "Jason"].each {|i| puts i}
+```
+
+```
+Hello
+Jason
+```
+
+```ruby
+{foo: true, bar: false}.each {|key, value| puts "#{key}:#{value}"}
+```
+
+```
+
+foo:true
+bar:false
 ```
 
 <route lang="yaml">

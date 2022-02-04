@@ -44,7 +44,7 @@ html.dark .prose {
   --prism-comment: #78716c; /* warm-gray-500 */
   /* --prism-string: #d48372; */
   --prism-string: #d97706; /* amber-600 */
-  --prism-literal: #429988;
+  --prism-literal: #429988 !important;
   /* --prism-keyword: #4d9375; */
   --prism-keyword: #818cf8;
   --prism-boolean: #1c6b48;

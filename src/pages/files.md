@@ -1,42 +1,58 @@
-There are different ways to work with files:
-```
-r: Read only (default)
-w: Overwrite or create a new file
-a: Append or create a new file
-r+: Read & write existing file
-w+: Overwrite read or create a file
-a+: Append read or create file
-```
+```ruby
+file = File.open "file-name"
 
-```lua
--- Create new file for reading and writing
-file = io.open("test.lua", "w+")
+# Get content of file
 
--- Write text to the file
-file:write("Random string of text\n")
-file:write("Some more text\n")
+content = file.read
 
--- Move back to the beginning of the file
-file:seek("set", 0)
+# Write the content to the file
+file.write "#{content} writed into file"
 
--- Read from the file
-print(file:read("*a"))
-
--- Close the file
-file:close()
-
--- Open file for appending and reading
-file = io.open("test.lua", "a+")
-
-file:write("Even more text\n")
-
-file:seek("set", 0)
-
-print(file:read("*a"))
-
-file:close()
+# Commit the change
+file.close
 ```
 
+Rename
+
+```ruby
+File.rename "old-name", "new-name"
+```
+
+Get the size in byte of the file
+
+```ruby
+File.size "file-name"
+```
+
+Check if the file exist
+
+```ruby
+File.exist? "file-name"
+```
+
+Get the extension name from the file name
+
+```ruby
+File.extname "file-name.ext"
+```
+
+Get the file name without the directory part
+
+```ruby
+File.basename "dir/file-name"
+```
+
+Get the path for this file, without the file name
+
+```ruby
+File.dirname "dir/file-name"
+```
+
+Check if it's directory
+
+```ruby
+File.directory? "file-name"
+```
 <route lang="yaml">
 meta:
   title: File IO

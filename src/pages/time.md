@@ -1,15 +1,22 @@
-Two functions, `time` and `date`, do all date and time queries in Lua.
+All function related to time start with `Timer.`
 
-```lua
-local now = os.time()
-print(now)
+```ruby
+now = Time.now 
+puts now.to_i
 
-local timestamp = os.time({year=2021, month=9, day=15, hour=3, minute=4})
-print(timestamp)
+timestamp = Time.new(
+	year = 2021, 
+	month = 9, 
+	day = 15,
+	hour = 3,
+	minute = 4,
+)
 
-t = os.date('*t', timestamp)
-print(t.year)
-print(t.hour)
+puts timestamp.to_i
+
+t = Time.at timestamp.to_f
+puts t.year
+puts t.hour
 ```
 ```
 1641046800
@@ -20,56 +27,128 @@ print(t.hour)
 
 You can pretty format time:
 
-```lua
-print(os.date("today is %A, in %B"))
+```ruby
+print(Time.now.strftime "today is %A, in %B")
 ```
 ```
 today is Saturday, in January
 ```
 
-All formatting tags:
+Flags:
 
 ```
-%a	abbreviated weekday name (e.g., Wed)
-%A	full weekday name (e.g., Wednesday)
-%b	abbreviated month name (e.g., Sep)
-%B	full month name (e.g., September)
-%c	date and time (e.g., 09/16/98 23:48:10)
-%d	day of the month (16) [01-31]
-%H	hour, using a 24-hour clock (23) [00-23]
-%I	hour, using a 12-hour clock (11) [01-12]
-%M	minute (48) [00-59]
-%m	month (09) [01-12]
-%p	either "am" or "pm" (pm)
-%S	second (10) [00-61]
-%w	weekday (3) [0-6 = Sunday-Saturday]
-%x	date (e.g., 09/16/98)
-%X	time (e.g., 23:48:10)
-%Y	full year (1998)
-%y	two-digit year (98) [00-99]
-%%	the character `%´
+-  don't pad a numerical output
+_  use spaces for padding
+0  use zeros for padding
+^  upcase the result string
+#  change case
+:  use colons for %z
+```
+
+Format directives:
+
+```
+Date (Year, Month, Day):
+  %Y - Year with century if provided, will pad result at least 4 digits.
+          -0001, 0000, 1995, 2009, 14292, etc.
+  %C - year / 100 (rounded down such as 20 in 2009)
+  %y - year % 100 (00..99)
+
+  %m - Month of the year, zero-padded (01..12)
+          %_m  blank-padded ( 1..12)
+          %-m  no-padded (1..12)
+  %B - The full month name (``January'')
+          %^B  uppercased (``JANUARY'')
+  %b - The abbreviated month name (``Jan'')
+          %^b  uppercased (``JAN'')
+  %h - Equivalent to %b
+
+  %d - Day of the month, zero-padded (01..31)
+          %-d  no-padded (1..31)
+  %e - Day of the month, blank-padded ( 1..31)
+
+  %j - Day of the year (001..366)
+
+Time (Hour, Minute, Second, Subsecond):
+  %H - Hour of the day, 24-hour clock, zero-padded (00..23)
+  %k - Hour of the day, 24-hour clock, blank-padded ( 0..23)
+  %I - Hour of the day, 12-hour clock, zero-padded (01..12)
+  %l - Hour of the day, 12-hour clock, blank-padded ( 1..12)
+  %P - Meridian indicator, lowercase (``am'' or ``pm'')
+  %p - Meridian indicator, uppercase (``AM'' or ``PM'')
+
+  %M - Minute of the hour (00..59)
+
+  %S - Second of the minute (00..60)
+
+  %L - Millisecond of the second (000..999)
+       The digits under millisecond are truncated to not produce 1000.
+  %N - Fractional seconds digits, default is 9 digits (nanosecond)
+          %3N  millisecond (3 digits)
+          %6N  microsecond (6 digits)
+          %9N  nanosecond (9 digits)
+          %12N picosecond (12 digits)
+          %15N femtosecond (15 digits)
+          %18N attosecond (18 digits)
+          %21N zeptosecond (21 digits)
+          %24N yoctosecond (24 digits)
+       The digits under the specified length are truncated to avoid
+       carry up.
+
+Time zone:
+  %z - Time zone as hour and minute offset from UTC (e.g. +0900)
+          %:z - hour and minute offset from UTC with a colon (e.g. +09:00)
+          %::z - hour, minute and second offset from UTC (e.g. +09:00:00)
+  %Z - Abbreviated time zone name or similar information.  (OS dependent)
+
+Weekday:
+  %A - The full weekday name (``Sunday'')
+          %^A  uppercased (``SUNDAY'')
+  %a - The abbreviated name (``Sun'')
+          %^a  uppercased (``SUN'')
+  %u - Day of the week (Monday is 1, 1..7)
+  %w - Day of the week (Sunday is 0, 0..6)
+
+ISO 8601 week-based year and week number:
+The first week of YYYY starts with a Monday and includes YYYY-01-04.
+The days in the year before the first week are in the last week of
+the previous year.
+  %G - The week-based year
+  %g - The last 2 digits of the week-based year (00..99)
+  %V - Week number of the week-based year (01..53)
+
+Week number:
+The first week of YYYY that starts with a Sunday or Monday (according to %U
+or %W). The days in the year before the first week are in week 0.
+  %U - Week number of the year. The week starts with Sunday. (00..53)
+  %W - Week number of the year. The week starts with Monday. (00..53)
+
+Seconds since the Epoch:
+  %s - Number of seconds since 1970-01-01 00:00:00 UTC.
+
+Literal string:
+  %n - Newline character (\n)
+  %t - Tab character (\t)
+  %% - Literal ``%'' character
+
+Combination:
+  %c - date and time (%a %b %e %T %Y)
+  %D - Date (%m/%d/%y)
+  %F - The ISO 8601 date format (%Y-%m-%d)
+  %v - VMS date (%e-%^b-%4Y)
+  %x - Same as %D
+  %X - Same as %T
+  %r - 12-hour time (%I:%M:%S %p)
+  %R - 24-hour time (%H:%M)
+  %T - 24-hour time (%H:%M:%S)
 ```
 
 ### Sleep
 
-Lua doesn't provide a standard `sleep` function, but there are several ways to implement one.
+```ruby
+# Stop the program for 2 seconds
 
-Linux:
-
-```lua
-function sleep(n)
-    os.execute("sleep " .. tonumber(n))
-end
-```
-
-Windows:
-
-```lua
-function sleep(n)
-    if n > 0 then
-        os.execute("ping -n " .. tonumber(n+1) .. " localhost > NUL")
-    end
-end
+sleep 2
 ```
 
 <route lang="yaml">
@@ -77,10 +156,3 @@ meta:
   title: Time
 </route>
 
-With [LuaSocket](https://github.com/diegonehab/luasocket) module (`luarocks install luasocket`):
-
-```lua
-socket = require("socket")
-
-socket.sleep(0.2)
-```
