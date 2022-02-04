@@ -3,7 +3,7 @@ a = 3
 b = 2
 c = a + b
 puts c
-# 3
+# 5
 
 d = a - b
 puts d
